@@ -39,11 +39,7 @@ def to_usd(my_price):
 
 # TODO: write some Python code here to produce the desired output
 
-print(products)
-
-
-# 1) capture product ids until we're done
-# (use infinite while loop)
+total_price = 0
 
 selected_ids = []
 while True: 
@@ -52,20 +48,38 @@ while True:
         break
     else:
         selected_ids.append(selected_id)
-    print(selected_id)
 
-print("WE HAVE REACHED THE END OF THE LOOP")
-print(selected_ids)
+print("---------------------")
 
+print("GREEN FOODS GROCERY")
+print("www.green-foods-grocery.com")
+print("(555) 555-5555")
 
-# 2) Perform product lookups to determine what the product's name and price are
-#selected_ids = ["1","2","3","2","1"]
+print("---------------------")
+
+from datetime import datetime
+
+now = datetime.now()
+
+dt_string = now.strftime("%m/%d/%Y %H:%M %p")
+print("CHECKOUT AT:", dt_string)
+
+print("---------------------")
+
+print("SELECTED PRODUCTS:")
 
 for selected_id in selected_ids:
-    print(selected_id)
-    # lookup the corresponding product!
-    # or maybe display the selected product's name and price
-
     matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
     matching_product = matching_products[0]
-    print(matching_product["name"], matching_product["price"])
+    total_price = total_price + matching_product["price"]
+    print("...", matching_product["name"], "--", "${:,.2f}".format(matching_product["price"]))
+
+print("---------------------")
+
+print("SUBTOTAL PRICE:", str("${:,.2f}".format(total_price)))
+
+tax = total_price * 0.0875
+print("TAX (@ 8.875%):", str("${:,.2f}".format(tax)))
+
+after_tax_total_price = total_price + tax
+print("TOTAL:", str("${:,.2f}".format(after_tax_total_price)))

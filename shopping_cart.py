@@ -40,6 +40,7 @@ def to_usd(my_price):
 # TODO: write some Python code here to produce the desired output
 
 total_price = 0
+#valid_options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
 selected_ids = []
 while True: 
@@ -48,6 +49,11 @@ while True:
         break
     else:
         selected_ids.append(selected_id)
+    #if selected_id != valid_options:  
+        #print("Sorry, your ID is not valid")
+        #continue
+    
+
 
 print("---------------------")
 
@@ -83,3 +89,9 @@ print("TAX (@ 8.875%):", str("${:,.2f}".format(tax)))
 
 after_tax_total_price = total_price + tax
 print("TOTAL:", str("${:,.2f}".format(after_tax_total_price)))
+
+print("---------------------")
+
+print("THANK YOU, SEE YOU AGAIN SOON!")
+
+print("---------------------")

@@ -44,12 +44,12 @@ valid_options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", 
 
 selected_ids = []
 while True: 
-    selected_id = input("Please select / scan a valid product id: ")
+    selected_id = input("Please enter a valid product id; enter 'DONE' when finished: ")
     if selected_id.upper() == "DONE":
         break
     else:
         if selected_id not in valid_options:  
-            print("Sorry, your ID is not valid")
+            print("Sorry, your ID is not valid, please try again!")
             continue
         else: 
             selected_ids.append(selected_id)

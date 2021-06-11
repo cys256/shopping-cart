@@ -7,4 +7,4 @@ Instructions:
 + Open Terminal and enter "cd ~/Desktop/shopping-cart" in the command line
 + Run the Python script by entering "python shopping_cart.py" in the command line
 + Enter valid product id when prompted
-+ Enter "DONE when complete to generate receipt
++ Enter "DONE" when complete to generate receipt
